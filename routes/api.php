@@ -18,7 +18,23 @@ Route::get('/news', function(){
 		[
 			"title" => 'Jual Rumah Murah',
 			"thumbnail" => "https://avatars.githubusercontent.com/u/12620257?v=3"
-		]
+		],
+		[
+			"title" => 'Jual Rumah Murah 2',
+			"thumbnail" => "https://github.com/identicons/jasonlong.png"
+		],
+		[
+			"title" => 'Jual Rumah Murah 3',
+			"thumbnail" => "https://avatars0.githubusercontent.com/u/883126?v=3&s=400"
+		],
+		[
+			"title" => 'Jual Rumah Murah 3',
+			"thumbnail" => "https://avatars3.githubusercontent.com/u/4?v=3&s=400"
+		],
+		[
+			"title" => 'James Kyle',
+			"thumbnail" => "https://avatars1.githubusercontent.com/u/952783?v=3&s=400"
+		],
 	];	
 	return response()->json($data, 200);
 });
