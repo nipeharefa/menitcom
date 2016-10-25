@@ -38,6 +38,7 @@ Route::get('/news', function(){
 	];	
 	return response()->json($data, 200);
 });
+
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
