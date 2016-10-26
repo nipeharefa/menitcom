@@ -18,7 +18,8 @@ Route::get('/news', function(){
 		return [
                 'id' => $item->id,
                 'title' => $item->title,
-                'thumbnail' => $item->thumbnail
+                'thumbnail' => $item->thumbnail,
+                'created_at' => $item->created_at->date
             ];
 	});
 	return response()->json($data, 200);
