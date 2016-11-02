@@ -36,7 +36,7 @@
 
 				const url = '/news/' + item.id
 				const self = this
-				this.$http.delete(url, []).then((res) => {
+				this.$http.delete(url, [{_token: Laravel.csrfToken}]).then((res) => {
 					self.$store.dispatch('deleteNews', index)
 				})
 			}

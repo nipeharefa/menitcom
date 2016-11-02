@@ -43,7 +43,7 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only('title', 'thumbnail');
+        $data = $request->only('title', 'thumbnail', 'content');
 
 
         $result = Auth::user()->News()->save(new \App\News($data));
