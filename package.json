@@ -30,5 +30,5 @@
     "vue-router": "^2.0.1",
     "vuex": "^2.0.0",
     "vuex-router-sync": "next"
-  }
+  },
 }

@@ -19,6 +19,7 @@ Route::get('/news', function(){
                 'id' => $item->id,
                 'title' => $item->title,
                 'thumbnail' => $item->thumbnail,
+                'content' => $item->content,
                 'created_at' => $item->created_at->format('d-M-Y,H:i:s')
             ];
 	});
