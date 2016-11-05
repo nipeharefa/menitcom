@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Http\Requests;
+use App\News;
 
 class NewsController extends Controller
 {
@@ -56,9 +57,33 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $data = News::get()->map(function($item){
+            return [
+                    'id' => $item->id,
+                    'title' => $item->title,
+                    'thumbnail' => $item->thumbnail,
+                    'content' => $item->content,
+                    'created_at' => $item->created_at->format('d-M-Y,H:i:s')
+                ];
+        });
+        return response()->json($data, 200);
+    }
+
+    public function showDetailNews($id) 
+    {
+        $news = News::find($id);
+
+        $response = [
+            'id' => $news->id,
+            'title' => $news->title,
+            'thumbnail' => $news->thumbnail,
+            'content' => $news->content,
+            'created_at' => $news->created_at->format('d-M-Y,H:i:s')
+        ];
+
+        return response()->json($response, 200);
     }
 
     /**

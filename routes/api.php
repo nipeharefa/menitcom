@@ -13,18 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/news', function(){
-	$data = \App\News::get()->map(function($item){
-		return [
-                'id' => $item->id,
-                'title' => $item->title,
-                'thumbnail' => $item->thumbnail,
-                'content' => $item->content,
-                'created_at' => $item->created_at->format('d-M-Y,H:i:s')
-            ];
-	});
-	return response()->json($data, 200);
-});
+Route::get('/news', 'NewsController@show');
+Route::get('/news/{id}', 'NewsController@showDetailNews');
 
 Route::get('/user', function (Request $request) {
     return $request->user();
